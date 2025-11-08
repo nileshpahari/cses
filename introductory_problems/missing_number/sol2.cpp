@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
+
 int main() {
   int n;
   cin >> n;
@@ -11,7 +11,8 @@ int main() {
     xor1 = xor1 ^ i;
     xor2 = xor2 ^ no;
   }
-  xor1=xor1^n;
-  int XOR=xor1^xor2;
+  xor1 = xor1 ^ n;
+  int XOR = xor1 ^ xor2;
   cout << XOR;
   return 0;
+}
