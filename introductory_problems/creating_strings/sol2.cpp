@@ -21,7 +21,6 @@ typedef pair<ll, ll> pll;
 
 int freq[26];
 vector<string> permutations;
-string s;
 int n;
 
 void solve(string str) {
@@ -39,6 +38,7 @@ void solve(string str) {
 }
 int main() {
   fastio();
+  string s;
   cin >> s;
   n = s.length();
   for (char ch : s) {
