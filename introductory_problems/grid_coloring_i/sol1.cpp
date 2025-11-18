@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-#include <vector>
 using namespace std;
 
 #define fastio()                                                               \
@@ -12,7 +11,6 @@ void solve() {
   int h, w;
   cin >> h >> w;
   vector<vector<int>> grid(h, vector<int>(w));
-  vector<vector<int>> ans(h, vector<int>(w));
   for (int i = 0; i < h; i++) {
     for (int j = 0; j < w; j++) {
       char ch;
@@ -24,18 +22,18 @@ void solve() {
   for (int r = 0; r < h; r++) {
     for (int c = 0; c < w; c++) {
       int cnt = 0;
-      while ((cnt == grid[r][c]) || (c > 0 && ans[r][c - 1] == cnt) ||
-             (r > 0 && ans[r - 1][c] == cnt)) {
+      while ((cnt == grid[r][c]) || (c > 0 && grid[r][c - 1] == cnt) ||
+             (r > 0 && grid[r - 1][c] == cnt)) {
         cnt++;
       }
       if (cnt > 3) {
         cout << "IMPOSSIBLE" << nl;
         return;
       }
-      ans[r][c] = cnt;
+      grid[r][c] = cnt;
     }
   }
-  for (vector<int> row : ans) {
+  for (vector<int> row : grid) {
     for (int element : row) {
       char a = char(element + 'A');
       cout << a;
