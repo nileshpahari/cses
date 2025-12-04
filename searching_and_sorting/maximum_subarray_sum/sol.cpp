@@ -10,15 +10,12 @@ using namespace std;
 void solve() {
   int n;
   cin >> n;
-  vector<int> a(n);
-  long long prefix = 0, maxi = LONG_LONG_MIN;
+  long long cur = -1e9, maxi = -1e9;
   for (int i = 0; i < n; i++) {
-    cin >> a[i];
-    if (prefix < 0) {
-      prefix = 0;
-    }
-    prefix += a[i];
-    maxi = max(maxi, prefix);
+    long long a;
+    cin >> a;
+    cur = max(a, cur + a);
+    maxi = max(maxi, cur);
   }
   cout << maxi;
 }
